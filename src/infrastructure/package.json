@@ -1,0 +1,38 @@
+{
+  "name": "@blog-mcp/infrastructure",
+  "version": "1.0.0",
+  "description": "Blog-MCP infrastructure layer",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "validate": "node -e \"require('./dist/validator.js').main()\"",
+    "test:connection": "node -e \"require('./dist/validator.js').main()\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "uuid": "^9.0.1",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0"
+  },
+  "keywords": [
+    "blog-mcp",
+    "infrastructure",
+    "supabase",
+    "typescript"
+  ],
+  "author": "Blog-MCP Team",
+  "license": "MIT"
+}

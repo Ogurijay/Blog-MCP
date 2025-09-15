@@ -1,0 +1,54 @@
+{
+  "name": "blog-mcp",
+  "version": "1.0.0",
+  "description": "智能化博客系统",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev:blog-web",
+    "dev:blog-web": "cd src/apps/blog-web && npm run dev",
+    "dev:admin-web": "cd src/apps/admin-web && npm run dev",
+    "build": "npm run build:blog-web && npm run build:admin-web",
+    "build:blog-web": "cd src/apps/blog-web && npm run build",
+    "build:admin-web": "cd src/apps/admin-web && npm run build",
+    "test": "npm run test:blog-web && npm run test:admin-web",
+    "test:blog-web": "cd src/apps/blog-web && npm run test",
+    "test:admin-web": "cd src/apps/admin-web && npm run test",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "type-check": "vue-tsc --noEmit",
+    "supabase:dev": "supabase dev",
+    "supabase:deploy": "supabase deploy",
+    "functions:deploy": "supabase functions deploy",
+    "migrate:up": "node scripts/migrate.js up",
+    "migrate:down": "node scripts/migrate.js down",
+    "migrate:status": "node scripts/migrate.js status",
+    "migrate:create": "node scripts/migrate.js create",
+    "migrate:init": "node scripts/migrate.js init",
+    "test:connection": "node scripts/test-supabase-connection.js",
+    "init:supabase": "node scripts/init-supabase.js",
+    "setup:dev": "npm install && npm run init:supabase && npm run test:connection"
+  },
+  "keywords": [
+    "blog",
+    "vue3",
+    "supabase",
+    "mcp",
+    "ai",
+    "typescript"
+  ],
+  "author": "Blog-MCP Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "typescript": "^5.0.0",
+    "vue-tsc": "^1.8.0",
+    "dotenv": "^16.3.1"
+  },
+  "workspaces": [
+    "src/apps/*",
+    "src/shared-ui"
+  ]
+}
